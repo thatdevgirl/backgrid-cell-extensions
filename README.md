@@ -24,3 +24,26 @@ BooleanCell
 -----------
 
 This cell extends the Backgrid Cell so that it replaces a boolean model property value with either "yes" or "no".  Model data should (obviously) be a boolean value.
+
+Usage
+-----------
+
+Use any of these extensions as the value of the <em>cell</em> property in the <em>columns</em> object for your Backgrid data table.
+
+<pre>
+var columns = [{
+	name: 'status',
+	label: 'Status',
+	cell: StatusFormatterCell
+},
+{
+	name: 'image',
+	label: 'Image',
+	cell: ImageCell
+},
+{
+	name: 'yesno',
+	label: 'Yes or No',
+	cell: BooleanCell
+}];
+</pre>
