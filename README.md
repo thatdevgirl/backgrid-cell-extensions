@@ -18,7 +18,7 @@ Cell values and classes can be added or modified as necessary.  The cases given 
 ImageCell
 -----------
 
-This cell extends the Backgrid Cell so that it inserts an image into the table cell.  Model data should contain the URI of the image.
+This cell extends the Backgrid Cell so that it inserts an image into the table cell.  Model data should contain the URI of the image.  The column data can optionally include a "class" property to add class name(s) to the image tag.
 
 BooleanCell
 -----------
@@ -39,7 +39,8 @@ var columns = [{
 {
 	name: 'image',
 	label: 'Image',
-	cell: ImageCell
+	cell: ImageCell,
+	class: 'image-class' // optional
 },
 {
 	name: 'yesno',

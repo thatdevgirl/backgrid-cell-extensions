@@ -61,8 +61,17 @@ var ImageCell = Backgrid.Cell.extend({
 	render: function() {
 		this.$el.empty();
 		
-		var _value = this.model.get(this.column.attributes.name);
-		var _html = '<img src="' + _value + '" />';
+		var _html = '';
+		var _url = this.model.get(this.column.attributes.name);
+		
+		// Only display the image tag if the image URL exists.
+		if (_url) {
+			// Get the class from the column object, if it exists.
+			var _class = this.column.attributes.class || '';
+			
+			// Create the image tag for this cell.
+			_html = '<img src="' + _url + '" class="' + _class + '" />';
+		}
 		
 		this.$el.html(_html);
 		return this;
